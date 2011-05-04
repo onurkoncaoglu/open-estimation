@@ -8,20 +8,20 @@ package com.openestimation.engine;
  * 
  * Defines available 'ranks' for a card
  */
-public interface Rank {
+public enum Rank {
 	// Rank definitions
-	int ACE_LOW = 1;
-	int TWO = 2;
-	int THREE = 3;
-	int FOUR = 4;
-	int FIVE = 5;
-	int SIX = 6;
-	int SEVEN = 7;
-	int EIGHT = 8;
-	int NINE = 9;
-	int TEN = 10;
-	int JACK = 11;
-	int QUEEN = 12;
-	int KING = 13;
-	int ACE_HIGH = 14;
+	ACE_LOW,
+	TWO,
+	THREE,
+	FOUR,
+	FIVE,
+	SIX,
+	SEVEN,
+	EIGHT,
+	NINE,
+	TEN,
+	JACK,
+	QUEEN,
+	KING,
+	ACE_HIGH;
 }

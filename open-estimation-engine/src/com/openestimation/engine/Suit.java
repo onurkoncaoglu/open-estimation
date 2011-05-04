@@ -7,10 +7,10 @@ package com.openestimation.engine;
  * This interface defines card suits
  *
  */
-public interface Suit {
+public enum Suit {
 	// Suite definitions
-	int SPADES = 1;
-	int HEARTS = 2;
-	int DIAMONDS = 3;
-	int CLUBS = 4;
+	SPADES,
+	HEARTS,
+	DIAMONDS,
+	CLUBS;
 }

@@ -9,6 +9,6 @@ package com.openestimation.engine;
  * Deck will be completely used after dealing to four players.
  * Each 'Player' will 'take' 13 'Cards'.
  */
-public class CardDeck implements Suit, Rank {
+public class CardDeck {
 
 }
