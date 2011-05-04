@@ -4,7 +4,7 @@ package com.openestimation.engine;
 /**
  * @author mohamed
  *
- * This interface defines card suits
+ * This enum defines card suits
  *
  */
 public enum Suit {
