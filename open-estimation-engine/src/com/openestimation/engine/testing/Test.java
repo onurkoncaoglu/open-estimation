@@ -26,6 +26,10 @@ public class Test {
 		card.setRank(Rank.ACE_HIGH);
 		card.setSuit(Suit.CLUBS);
 		System.out.println(card.getRank().toString());
-		System.out.println(card.getSuit().toString());	
+		System.out.println(card.getSuit().toString());
+		
+		// Getting int representation of suit
+		int i = card.getSuit().getSuit();
+		System.out.println(i);
 	}
 }

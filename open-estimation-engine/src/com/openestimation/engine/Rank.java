@@ -10,18 +10,24 @@ package com.openestimation.engine;
  */
 public enum Rank {
 	// Rank definitions
-	ACE_LOW,
-	TWO,
-	THREE,
-	FOUR,
-	FIVE,
-	SIX,
-	SEVEN,
-	EIGHT,
-	NINE,
-	TEN,
-	JACK,
-	QUEEN,
-	KING,
-	ACE_HIGH;
+	ACE_LOW(1),
+	TWO(2),
+	THREE(3),
+	FOUR(4),
+	FIVE(5),
+	SIX(6),
+	SEVEN(7),
+	EIGHT(8),
+	NINE(9),
+	TEN(10),
+	JACK(11),
+	QUEEN(12),
+	KING(13),
+	ACE_HIGH(14);
+	
+	int rank;
+	
+	private Rank(int rank){
+		this.rank = rank;
+	}
 }
