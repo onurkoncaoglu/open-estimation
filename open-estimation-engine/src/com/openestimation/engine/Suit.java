@@ -4,23 +4,13 @@ package com.openestimation.engine;
 /**
  * @author mohamed
  *
- * This enum defines card suits
+ * This interface defines card suits
  *
  */
-public enum Suit {
+public interface Suit {
 	// Suite definitions
-	SPADES(1),
-	HEARTS(2),
-	DIAMONDS(3),
-	CLUBS(4);
-	
-	int suit;
-	
-	private Suit(int suit){
-		this.suit = suit;
-	}
-	
-	public int getSuit() {
-		return this.suit;
-	}
+	int SPADES = 1;
+	int HEARTS = 2;
+	int DIAMONDS = 3;
+	int CLUBS = 4;
 }

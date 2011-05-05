@@ -23,6 +23,9 @@ public class CardDeck {
 		// TODO handle exceptions
 		deck.clear();
 		
+		//for (int i = Rank.ACE_LOW.get; i < array.length; i++) {
+			
+		//}
 	}
 	
 	public Card deal(int cards) {
