@@ -14,6 +14,45 @@ public class Card implements Rank, Suit{
 	int suit;
 	String imagePath;
 	
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		if (rank >= ACE_LOW && rank <= ACE_HIGH) {
+			this.rank = rank;
+		} else {
+			this.rank = -1;
+		}
+	}
+
+	public int getSuit() {
+		return suit;
+	}
+
+	public void setSuit(int suit) {
+		if (suit == SPADES 
+				|| suit == HEARTS
+				|| suit == DIAMONDS
+				|| suit == CLUBS) {
+			this.suit = suit;
+		} else {
+			this.suit = -1;
+		}
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
+	/**
+	 * @return
+	 * Returns a string representation for suit.
+	 */
 	public String suitToString(){
 		switch (suit) {
 		case SPADES:
@@ -31,6 +70,11 @@ public class Card implements Rank, Suit{
 			}
 	}
 	
+	/**
+	 * @return
+	 * Returns a string representation for rank.
+	 * @return
+	 */
 	public String rankToString(){
 		switch (rank) {
 		case ACE_LOW:
