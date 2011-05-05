@@ -9,8 +9,8 @@ package com.openestimation.engine;
  */
 public interface Suit {
 	// Suite definitions
-	int SPADES = 1;
-	int HEARTS = 2;
-	int DIAMONDS = 3;
-	int CLUBS = 4;
+	int SPADES = 4;
+	int HEARTS = 3;
+	int DIAMONDS = 2;
+	int CLUBS = 1;
 }
