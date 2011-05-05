@@ -19,6 +19,12 @@ public class CardDeck implements Rank, Suit{
 		return initialized;
 	}
 
+	boolean empty;
+
+	public boolean isEmpty() {
+		return empty;
+	}
+
 
 	public CardDeck() {
 		initialize();
@@ -56,13 +62,32 @@ public class CardDeck implements Rank, Suit{
 			deck.add(card);
 		}
 		this.initialized = true;
+		this.empty = false;
 	}
 	
+	/**
+	 * Deals one card at a time.
+	 * @return
+	 * Returns a dealt card
+	 */
+	public Card deal() {
+		Card card;
+		
+		// Exit if deck is empty.
+		if (this.isEmpty())
+			return null;
+		
+		// Pick a random position into deck
+		int min = 0; // first index in deck
+		int max = deck.size(); // TODO Check for exceptions.
+		int position = min + (int)(Math.random() * max);
+		
+		// Check to see if deck is empty
+		if (max <= 0)
+			this.empty = true;
 	
-	public Card deal(int cards) {
-		// TODO Implement
-		// TODO shuffle while you deal.
+		card = deck.remove(position); // TODO Check for exceptions.
 		this.initialized = false;
-		return null;
+		return card;
 	}
 }
