@@ -7,7 +7,6 @@ import com.openestimation.engine.Card;
 import com.openestimation.engine.CardDeck;
 import com.openestimation.engine.Rank;
 import com.openestimation.engine.Suit;
-import com.sun.org.apache.xerces.internal.impl.dv.xs.DecimalDV;
 
 /**
  * @author mohamed
