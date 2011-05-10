@@ -27,6 +27,7 @@ public class CardDeck implements Rank, Suit{
 
 
 	public CardDeck() {
+		deck = new Vector<Card>();
 		initialize();
 	}
 
@@ -83,7 +84,7 @@ public class CardDeck implements Rank, Suit{
 		int position = min + (int)(Math.random() * max);
 		
 		// Check to see if deck is empty
-		if (max <= 0)
+		if (max <= 1)
 			this.empty = true;
 	
 		card = deck.remove(position); // TODO Check for exceptions.
