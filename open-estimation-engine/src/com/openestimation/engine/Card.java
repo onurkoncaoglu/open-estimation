@@ -10,105 +10,115 @@ package com.openestimation.engine;
  * has a suit and a rank.
  */
 public class Card implements Rank, Suit{
-	int rank;
-	int suit;
-	String imagePath;
-	
-	public int getRank() {
-		return rank;
-	}
+    int rank;
+    int suit;
+    boolean trump;
 
-	public void setRank(int rank) {
-		if (rank >= ACE_LOW && rank <= ACE_HIGH) {
-			this.rank = rank;
-		} else {
-			this.rank = -1;
-		}
-	}
+    public void setIsTrump(boolean trump) {
+        this.trump = trump;
+    }
 
-	public int getSuit() {
-		return suit;
-	}
+    public boolean isTrump() {
+        return trump;
+    }
 
-	public void setSuit(int suit) {
-		if (suit == SPADES 
-				|| suit == HEARTS
-				|| suit == DIAMONDS
-				|| suit == CLUBS) {
-			this.suit = suit;
-		} else {
-			this.suit = -1;
-		}
-	}
+    String imagePath;
 
-	public String getImagePath() {
-		return imagePath;
-	}
+    public int getRank() {
+            return rank;
+    }
 
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
+    public void setRank(int rank) {
+            if (rank >= ACE_LOW && rank <= ACE_HIGH) {
+                    this.rank = rank;
+            } else {
+                    this.rank = -1;
+            }
+    }
 
-	/**
-	 * @return
-	 * Returns a string representation for suit.
-	 */
-	public String suitToString(){
-		switch (suit) {
-		case SPADES:
-			return "Spades";
-		case HEARTS:
-			return "Hearts";
-		case DIAMONDS:
-			return "Diamonds";
-		case CLUBS:
-			return "Clubs";
+    public int getSuit() {
+            return suit;
+    }
 
-		default:
-			// TODO Manage invalid values here.
-			return null;
-			}
-	}
-	
-	/**
-	 * @return
-	 * Returns a string representation for rank.
-	 * @return
-	 */
-	public String rankToString(){
-		switch (rank) {
-		case ACE_LOW:
-			return "No Low Aces in this game";
-		case TWO:
-			return "Two";
-		case THREE:
-			return "Three";
-		case FOUR:
-			return "Four";
-		case FIVE:
-			return "Five";
-		case SIX:
-			return "Six";
-		case SEVEN:
-			return "Seven";
-		case EIGHT:
-			return "Eight";
-		case NINE:
-			return "Nine";
-		case TEN:
-			return "Ten";
-		case JACK:
-			return "Jack";
-		case QUEEN:
-			return "Queen";
-		case KING:
-			return "King";
-		case ACE_HIGH:
-			return "Ace";
+    public void setSuit(int suit) {
+            if (suit == SPADES 
+                            || suit == HEARTS
+                            || suit == DIAMONDS
+                            || suit == CLUBS) {
+                    this.suit = suit;
+            } else {
+                    this.suit = -1;
+            }
+    }
 
-		default:
-			// TODO Manage invalid values here.
-			return null;
-		}
-	}
+    public String getImagePath() {
+            return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+            this.imagePath = imagePath;
+    }
+
+    /**
+     * @return
+     * Returns a string representation for suit.
+     */
+    public String suitToString(){
+            switch (suit) {
+            case SPADES:
+                    return "Spades";
+            case HEARTS:
+                    return "Hearts";
+            case DIAMONDS:
+                    return "Diamonds";
+            case CLUBS:
+                    return "Clubs";
+
+            default:
+                    // TODO Manage invalid values here.
+                    return null;
+                    }
+    }
+
+    /**
+     * @return
+     * Returns a string representation for rank.
+     * @return
+     */
+    public String rankToString(){
+            switch (rank) {
+            case ACE_LOW:
+                    return "No Low Aces in this game";
+            case TWO:
+                    return "Two";
+            case THREE:
+                    return "Three";
+            case FOUR:
+                    return "Four";
+            case FIVE:
+                    return "Five";
+            case SIX:
+                    return "Six";
+            case SEVEN:
+                    return "Seven";
+            case EIGHT:
+                    return "Eight";
+            case NINE:
+                    return "Nine";
+            case TEN:
+                    return "Ten";
+            case JACK:
+                    return "Jack";
+            case QUEEN:
+                    return "Queen";
+            case KING:
+                    return "King";
+            case ACE_HIGH:
+                    return "Ace";
+
+            default:
+                    // TODO Manage invalid values here.
+                    return null;
+            }
+    }
 }
