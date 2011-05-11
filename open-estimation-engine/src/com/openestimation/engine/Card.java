@@ -9,17 +9,33 @@ package com.openestimation.engine;
  * This class represents a card that
  * has a suit and a rank.
  */
-public class Card implements Rank, Suit{
+public final class Card implements Rank, Suit{
     int rank;
     int suit;
-    boolean trump;
+    boolean isTrump;
 
-    public void setIsTrump(boolean trump) {
-        this.trump = trump;
+    /**
+     * Default constructor. Leaves all null.
+     */
+    public Card() {
     }
 
-    public boolean isTrump() {
-        return trump;
+    /**
+     * Constructor that sets Suit and Rank;
+     * @param rank
+     * @param suit
+     */
+    public Card(int rank, int suit) {
+        this.setSuit(suit);
+        this.setRank(rank);
+    }
+
+    public void setIsTrump(boolean trump) {
+        this.isTrump = trump;
+    }
+
+    public boolean getIsTrump() {
+        return isTrump;
     }
 
     String imagePath;

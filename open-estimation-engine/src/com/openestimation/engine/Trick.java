@@ -4,7 +4,7 @@
 package com.openestimation.engine;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 
 /**
  * @author mohamed
@@ -14,7 +14,7 @@ import java.util.Iterator;
  * A trick must have a base suite.
  * A trick can only be collected by one player.
  */
-public class Trick {
+public class Trick implements Suit, Rank{
 
     public static final int cardCount = 4;
 
@@ -30,6 +30,7 @@ public class Trick {
     int firstPlayerDirection;
     
     int trump;
+    boolean hasTrump;
 
     public boolean isCollected() {
         return collected;
@@ -41,6 +42,7 @@ public class Trick {
             trick.add(null);
         
         collected = false;
+        hasTrump = false;
     }
     
     public void collectCard(Card card, int playerDirection){
@@ -56,8 +58,10 @@ public class Trick {
             }
             
             // check if this is a trump
-            if (card.isTrump())
+            if (card.getIsTrump()){
                 trump = card.suit;
+                hasTrump = true;
+            }
             
             // insert card into trick based on player position.
             trick.set(playerDirection, card);
@@ -73,14 +77,30 @@ public class Trick {
      * @return A Card object.
      */
     public Card getWinningCard(){
-        
-        // return winning card only when trick is inplay and not yet collected.
+        // return winning card only when trick is in-play and not yet collected.
         if (!this.isCollected()){
-            /**
-             * TODO: Determine Winning suit. Winning suit is trump if any.
-             * TODO: Determine highest rank within the winning suite.
-             * TODO: return winning card.
-             */
+           
+            // Determine winning suit
+            int winningSuit;
+            if (this.hasTrump)
+                winningSuit = this.trump;
+            else
+                winningSuit = this.baseSuit;
+            
+            // Determine highest rank within the winning suite.
+            //int winningRank = TWO;
+            Card winningCard = new Card();
+            winningCard.setRank(TWO); // Lowest value possible for a rank.
+            for(Card card : trick){
+                if (card.getSuit() == winningSuit){
+                    if (winningCard.getRank() <= card.getRank()) {
+                        winningCard = card;
+                    }
+                }
+            }
+            
+            // Return winning card
+            return winningCard;
          }
         return null;
     }
