@@ -12,7 +12,9 @@ import java.util.Vector;
  * Each 'Player' will 'take' 13 'Cards'.
  */
 public class CardDeck implements Rank, Suit{
-	Vector<Card> deck;
+	
+        // TODO: Replace all vectors with ArrayLists
+        Vector<Card> deck;
 	
 	boolean initialized;
 	public boolean isInitialized() {
