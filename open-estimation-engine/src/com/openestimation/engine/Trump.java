@@ -5,10 +5,10 @@ package com.openestimation.engine;
  *
  * This enum defines possible trump suits
  */
-public enum Trump {
-	NO_TRUMP,
-	SPADES,
-	HEARTS,
-	DIAMONDS,
-	CLUBS;
+public interface Trump {
+	int NO_TRUMP = 0;
+	int SPADES = 4;
+	int HEARTS = 3;
+	int DIAMONDS = 2;
+	int CLUBS = 1;
 }
