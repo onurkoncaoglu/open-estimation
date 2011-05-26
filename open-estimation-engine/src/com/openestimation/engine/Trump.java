@@ -3,7 +3,7 @@ package com.openestimation.engine;
 /**
  * @author mohamed
  *
- * This enum defines possible trump suits
+ * This interface defines possible trump suits
  */
 public interface Trump {
 	int NO_TRUMP = 0;
