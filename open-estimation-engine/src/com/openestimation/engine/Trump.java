@@ -11,4 +11,5 @@ public interface Trump {
 	int HEARTS = 3;
 	int DIAMONDS = 2;
 	int CLUBS = 1;
+        int PASS = -1;
 }
