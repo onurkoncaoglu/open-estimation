@@ -9,7 +9,7 @@ package com.openestimation.engine;
  * TODO: RuleSet has an array of bids.
  * @author mohamed
  */
-class Bid implements Trump {
+public class Bid implements Trump {
     private int trump;
 
     public void setTrump(int trump) {
