@@ -14,38 +14,38 @@ import java.util.ArrayList;
  * A trick must have a base suite.
  * A trick can only be collected by one player.
  */
-public class Trick implements Suit, Rank{
+final public class Trick {
 
-    public static final int cardCount = 4;
+    private static final int cardCount = 4;
 
-    ArrayList<Card> trick;
-    
-    boolean collected;
-    
-    Card firstCard;
-    
-    int baseSuit;
-    
-    // TODO: verify usability 
-    int firstPlayerDirection;
-    
-    int trump;
-    boolean hasTrump;
+    private ArrayList<Card> trick;
 
-    public boolean isCollected() {
-        return collected;
+    public ArrayList<Card> getTrick() {
+        return trick;
+    }
+        
+    private Card firstCard;
+        
+    private String firstPlayerDirection;
+
+    public String getFirstPlayerDirection() {
+        return firstPlayerDirection;
+    }
+
+    public void setFirstPlayerDirection(String firstPlayerDirection) {
+        this.firstPlayerDirection = firstPlayerDirection;
     }
     
     public Trick() {
         trick = new ArrayList<Card>();
-        for (int i = 0; i < cardCount; i++)
-            trick.add(null);
-        
-        collected = false;
-        hasTrump = false;
+        firstCard = null;
     }
     
-    public void collectCard(Card card, int playerDirection){
+    /**
+     * @param card
+     * @param playerDirection 
+     */
+    public void collectCard(Card card){
         
         // check if we are trying to add cards to a full trick.
         if (trick.size() <= cardCount){
@@ -53,55 +53,13 @@ public class Trick implements Suit, Rank{
             // If this is the first card; store its information
             if (firstCard == null){
                 firstCard = card;
-                baseSuit = card.suit;
-                firstPlayerDirection = playerDirection;
             }
             
-            // check if this is a trump
-            if (card.getIsTrump()){
-                trump = card.suit;
-                hasTrump = true;
-            }
-            
-            // insert card into trick based on player position.
-            trick.set(playerDirection, card);
+            // Add card to trick
+            trick.add(card);            
         }
         else{
             // TODO: throw an exception or do something here.
         }
-    }
-    
-    /**
-     * Gets the winning card at any point during play. 
-     * Only if trick was not collected 
-     * @return A Card object.
-     */
-    public Card getWinningCard(){
-        // return winning card only when trick is in-play and not yet collected.
-        if (!this.isCollected()){
-           
-            // Determine winning suit
-            int winningSuit;
-            if (this.hasTrump)
-                winningSuit = this.trump;
-            else
-                winningSuit = this.baseSuit;
-            
-            // Determine highest rank within the winning suite.
-            //int winningRank = TWO;
-            Card winningCard = new Card();
-            winningCard.setRank(TWO); // Lowest value possible for a rank.
-            for(Card card : trick){
-                if (card.getSuit() == winningSuit){
-                    if (winningCard.getRank() <= card.getRank()) {
-                        winningCard = card;
-                    }
-                }
-            }
-            
-            // Return winning card
-            return winningCard;
-         }
-        return null;
     }
 }
