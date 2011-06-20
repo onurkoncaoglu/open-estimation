@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * 
  * @author mohamed
  */
-public class Hand implements Suit, Rank{
+final public class Hand {
     ArrayList<Card> hand;
     static final int maximumCards = 13;
     Card undoCard;
@@ -25,6 +25,11 @@ public class Hand implements Suit, Rank{
         // TODO: Implement sortHand()
     }
     
+    /**
+     * Draws a card from hand (actually removing it).
+     * @param card
+     * @return 
+     */
     public Card drawCard(Card card){
         if (hand.contains(card)){
             hand.remove(card); // remove card from hand.
@@ -42,11 +47,12 @@ public class Hand implements Suit, Rank{
      */
     public Card drawCard(int suit, int rank){
         Card card = new Card(suit, rank);
+        card = this.drawCard(card);
         return card;
     }
     
     /**
-     * Undos last draw from hand. Useful if card does not validate and user
+     * Undoes last draw from hand. Useful if card does not validate and user
      * wants to undo the draw.
      */
     public void undoDraw(){
@@ -92,7 +98,7 @@ public class Hand implements Suit, Rank{
      */
     public int getHighestRankInSuit(int suit) {
         Card highCard = new Card();
-        highCard.setRank(TWO);
+        highCard.setRank(Rank.TWO);
         int rank = -1;
         for (Card card : hand){
             if (card.suit == suit){
