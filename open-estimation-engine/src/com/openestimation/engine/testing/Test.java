@@ -50,50 +50,55 @@ public class Test implements Suit, Rank, PlayerDirection{
      */
     private static void testCardDeck(){
             System.out.println("Testing a CardDeck object...");
+            
+            /**
+             * CardDeck code changed.
+             * TODO: Rewrite.
+             */
 
-            CardDeck cardDeck = new CardDeck();
-
-            if (cardDeck.isInitialized()) {
-                    int counter= 0;
-                    while (!cardDeck.isEmpty()) {
-                            counter++;
-                            Card card = cardDeck.deal();
-                            System.out.println(
-                                    "Dealt this card from Deck:");
-                            System.out.println(
-                                    "Card Number:" + counter);
-                            System.out.println(
-                                    "\tRank:" + card.rankToString());
-                            System.out.println(
-                                    "\tSuit:" + card.suitToString());
-                    }
-            }
-
-            System.out.println("\nRe-initializing Deck...");
-            cardDeck.initialize();
-
-            // Dealing 13 cards around
-            if (cardDeck.isInitialized()) {
-                    final int handMax = 13;
-                    int playerCounter = 0;
-
-                    while (!cardDeck.isEmpty()) {
-                            playerCounter++;
-                            System.out.println(
-                                    "\nThis hand is to Player " 
-                                    + playerCounter);
-                            System.out.println(
-                                    "Card Number\t:\tRank\t:\tSuit");
-                            for (int i = 0; i < handMax; i++){
-                                    Card card = cardDeck.deal();
-                                    System.out.println((i+1) 
-                                            + "\t\t:\t" 
-                                            + card.rankToString() 
-                                            + "\t:\t" 
-                                            + card.suitToString());
-                            }
-                    }
-            }
+//            CardDeck cardDeck = new CardDeck();
+//
+//            if (cardDeck.isInitialized()) {
+//                    int counter= 0;
+//                    while (!cardDeck.isEmpty()) {
+//                            counter++;
+//                            Card card = cardDeck.deal();
+//                            System.out.println(
+//                                    "Dealt this card from Deck:");
+//                            System.out.println(
+//                                    "Card Number:" + counter);
+//                            System.out.println(
+//                                    "\tRank:" + card.rankToString());
+//                            System.out.println(
+//                                    "\tSuit:" + card.suitToString());
+//                    }
+//            }
+//
+//            System.out.println("\nRe-initializing Deck...");
+//            cardDeck.initialize();
+//
+//            // Dealing 13 cards around
+//            if (cardDeck.isInitialized()) {
+//                    final int handMax = 13;
+//                    int playerCounter = 0;
+//
+//                    while (!cardDeck.isEmpty()) {
+//                            playerCounter++;
+//                            System.out.println(
+//                                    "\nThis hand is to Player " 
+//                                    + playerCounter);
+//                            System.out.println(
+//                                    "Card Number\t:\tRank\t:\tSuit");
+//                            for (int i = 0; i < handMax; i++){
+//                                    Card card = cardDeck.deal();
+//                                    System.out.println((i+1) 
+//                                            + "\t\t:\t" 
+//                                            + card.rankToString() 
+//                                            + "\t:\t" 
+//                                            + card.suitToString());
+//                            }
+//                    }
+//            }
     }
     
     /**
@@ -101,24 +106,27 @@ public class Test implements Suit, Rank, PlayerDirection{
      */
     private static void testTrick(){
         Trick trick = new Trick();
-        
+        /**
+         * Trick code changed.
+         * TODO: Rewrite.
+         */
         // Cards to add
-        Card firstCard = new Card(TWO, CLUBS);
-        Card secondCard = new Card(THREE, CLUBS);
-        Card thirdCard = new Card(TWO, HEARTS);
-        thirdCard.setIsTrump(true);
-        Card forthCard = new Card(FOUR, CLUBS);
-        
-        // Add cards to trick
-        trick.collectCard(firstCard, SOUTH);
-        trick.collectCard(secondCard, EAST);
-        trick.collectCard(thirdCard, NORTH);
-        trick.collectCard(forthCard, WEST);
-        
-        // get winning card.
-        Card winningCard = trick.getWinningCard();
-        
-        System.out.println("Winning Rank is " + winningCard.getRank());
-        System.out.println("Winning Suit is " + winningCard.getSuit());
+//        Card firstCard = new Card(TWO, CLUBS);
+//        Card secondCard = new Card(THREE, CLUBS);
+//        Card thirdCard = new Card(TWO, HEARTS);
+//        thirdCard.setIsTrump(true);
+//        Card forthCard = new Card(FOUR, CLUBS);
+//        
+//        // Add cards to trick
+//        trick.collectCard(firstCard, SOUTH);
+//        trick.collectCard(secondCard, EAST);
+//        trick.collectCard(thirdCard, NORTH);
+//        trick.collectCard(forthCard, WEST);
+//        
+//        // get winning card.
+//        Card winningCard = trick.getWinningCard();
+//        
+//        System.out.println("Winning Rank is " + winningCard.getRank());
+//        System.out.println("Winning Suit is " + winningCard.getSuit());
     }
 }
