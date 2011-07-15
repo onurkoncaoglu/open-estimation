@@ -22,7 +22,7 @@ final public class Hand {
     private Card undoCard;
 
     public Hand() {
-        hand = new ArrayList();
+        hand = new ArrayList<Card>();
         undoCard = null;
     }
     
@@ -63,9 +63,11 @@ final public class Hand {
      * wants to undo the draw.
      */
     public void undoDraw(){
-        hand.add(undoCard);
-        this.sortHand();
-        undoCard = null;
+        if (undoCard != null){
+            hand.add(undoCard);
+            this.sortHand();
+            undoCard = null;
+        }
     }
     
     /**
@@ -136,10 +138,14 @@ final public class Hand {
             return null;
     }
     
+    /**
+     * Add a card object to hand. Maximum 13 cards.
+     * If the hand holds 13 cards, the added card will be discarded.
+     * TODO: consider throwing an exception here.
+     * @param card 
+     */
     public void addCard(Card card){
         if (hand.size() < maximumCards)
             hand.add(card);
-        //else
-            //TODO: throw an exception here.
     }
 }

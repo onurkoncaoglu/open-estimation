@@ -6,10 +6,10 @@ package com.openestimation.engine;
 
 /**
  * This class provides a structure of Bids placed by Players.
- * TODO: RuleSet has an array of bids.
+ * TODO: GameAuthority has an array of bids.
  * @author mohamed
  */
-public class Bid implements Trump {
+public class Bid {
     private int trump;
 
     public void setTrump(int trump) {

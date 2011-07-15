@@ -23,15 +23,26 @@ public abstract class PlayerBase {
     
     /**
      * This method allows a Player to select a card
-     * from hand and return it to the RuleSet caller object. 
+     * from hand and return it to the GameAuthority calling object. 
      * That card must be validated prior to return. It is the player's
      * responsibility to return a valid card.
-     * 
-     * @param trick
+     * If a returned card is not valid then the GameAuthority will throw an
+     * exception. (TODO: define exception).
+     * @param trick is the current trick in play.
      * @return 
      */
     abstract public Card play(Trick trick);
-    abstract public Bid placeBid();
+    
+    /**
+     * This method will be used by the GameAuthority to ask a Player to place
+     * a bid based on currentBid. Player bid is returned.
+     * @param currentBid is the last bid placed by previous Player.
+     * It is up to the player to save the final winning bid. 
+     * If currentBid is null then the previous player passes.
+     * @return 
+     * Player returns chosen bid here. if return is null then the Player passes.
+     */
+    abstract public Bid placeBid(Bid currentBid);
     
     private int score;
 
@@ -39,13 +50,17 @@ public abstract class PlayerBase {
         this.score = score;
     }
     
-    private Hand hand;
-
     public int getScore() {
         return score;
     }
 
+    private Hand hand;
+    
     public Hand getHand() {
         return hand;
+    }
+    
+    public void setHand(Hand hand){
+        this.hand = hand;
     }
 }
