@@ -38,10 +38,6 @@ public abstract class PlayerBase {
     public void setScore(int score) {
         this.score = score;
     }
-
-    public int getScore() {
-        return score;
-    }
     
     private Hand hand;
 
