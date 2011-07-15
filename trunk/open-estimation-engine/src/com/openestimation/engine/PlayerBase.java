@@ -41,8 +41,8 @@ public abstract class PlayerBase {
     
     private Hand hand;
 
-    public void setHand(Hand hand) {
-        this.hand = hand;
+    public int getScore() {
+        return score;
     }
 
     public Hand getHand() {
