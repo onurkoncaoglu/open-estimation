@@ -17,9 +17,16 @@ import java.util.ArrayList;
  * @author mohamed
  */
 final public class Hand {
-    ArrayList<Card> hand;
-    static final int maximumCards = 13;
-    Card undoCard;
+    private ArrayList<Card> hand;
+    private static final int maximumCards = 13;
+    private Card undoCard;
+
+    public Hand() {
+        hand = new ArrayList();
+        undoCard = null;
+    }
+    
+    
     
     public void sortHand(){
         // TODO: Implement sortHand()
@@ -127,5 +134,12 @@ final public class Hand {
             return list;
         else
             return null;
+    }
+    
+    public void addCard(Card card){
+        if (hand.size() < maximumCards)
+            hand.add(card);
+        //else
+            //TODO: throw an exception here.
     }
 }
